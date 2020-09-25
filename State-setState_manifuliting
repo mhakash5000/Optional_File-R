@@ -1,0 +1,47 @@
+
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import State from './Components/State';
+function App() {
+  return (
+    <div className="App">
+        <State/>
+    </div>
+  );
+}
+
+export default App;
+//
+import React, { Component } from 'react';
+
+class State extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            fruits:[
+                {name:'Apple', price:'100 taka'},
+                {name:'Mango', price:'80 taka'},
+            ]
+        }
+    }
+clickHandler=()=>{
+this.setState({
+    fruits:[
+        {name:'Banana',price:'100 taka'},
+        {name:'PainApple',price:'10 taka'}
+    ]
+})
+}
+
+    render(){
+        return(
+            <div>
+               <button onClick={this.clickHandler}>Boss Click Me</button>
+                <h1>Fruit of {this.state.fruits[0].name}.price is {this.state.fruits[0].price}</h1>
+                <h1>Fruit of {this.state.fruits[1].name}.price is {this.state.fruits[1].price}</h1>
+            </div>
+        )
+    }
+}
+export default State;
