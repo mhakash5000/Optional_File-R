@@ -1,0 +1,27 @@
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Component from './Components/FunctionalComponent';
+function App() {
+  return (
+    <div className="App">
+        <Component title="Functional Component" />
+    </div>
+  );
+}
+
+export default App;
+
+//functional function
+
+import React from 'react';
+function Component(props){
+   return(
+       <div>
+           <h1>I am {props.title}</h1>
+       </div>
+       
+   )
+}
+export default Component;
+
