@@ -1,0 +1,38 @@
+import React from 'react';
+import TwoWayDataBinding from './Components/TwoWayDataBinding';
+
+function App() {
+  return (
+    <div className="App">
+        <TwoWayDataBinding/>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+import React, { Component } from 'react';
+class ToWayDataBinding extends Component{
+    state={
+        name:"Akash"
+    }
+
+    eventHandler=(event)=>{
+        this.setState({
+            name:event.target.value
+        })
+    }
+    
+    render(){
+        return(
+         <div>
+             <input type="text" onChange={this.eventHandler} value={this.state.name} />
+        <h1>Hello {this.state.name}</h1>
+         </div>
+        )
+    }
+}
+export default ToWayDataBinding;
