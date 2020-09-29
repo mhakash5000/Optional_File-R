@@ -1,0 +1,21 @@
+import React, { Component } from 'react';
+class ToWayDataBinding extends Component{
+   
+
+    render(){
+        const names=['Mango','Jackfruit','banana','guava'];
+        const items=names.map((item,inx)=>{
+        return <li key="inx">{inx}-{item}</li>
+        })
+        return(
+         <div className="app">
+          fruits List
+          <div>
+            {items}
+          </div>
+         </div>
+        )
+    }
+}
+
+export default ToWayDataBinding;
