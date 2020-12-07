@@ -1,0 +1,24 @@
+import React, { Component } from 'react';
+
+class ReactState extends Component {
+       constructor(){
+           super()
+           this.state={
+               name:'AkasH'
+           }
+       }
+       changeName=(b)=>{
+           this.setState({name:b})
+           }
+ 
+    render() { 
+        return ( 
+           <div className="text-center">
+               <h1>{this.state.name}</h1>
+               <button onClick={this.changeName.bind(this,'MH AKasH')}>Change Name</button>
+           </div>
+         )
+    }
+}
+ 
+export default ReactState;
