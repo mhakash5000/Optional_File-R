@@ -1,0 +1,29 @@
+import React, { Component } from 'react'
+
+class Form extends Component {
+   constructor(){
+       super()
+       this.state={
+           username:""
+       }
+   }
+   ChangeEventHandler=(event)=>{
+       var ChangeName=event.target.name;
+       var ChangeValue=event.target.value;
+       this.setState({[ChangeName]:ChangeValue})
+   }
+  
+    render() {
+        return (
+            <div className="text-center">
+                <p>Your Form</p>
+                <p>{this.state.username}</p>
+                <input name="username" onChange={this.ChangeEventHandler}   type="text" placeholder="Enter Your Name:"/>
+                <br/>
+                <input type="submit" value="Submit" />
+            </div>
+        )
+    }
+}
+
+export default Form
