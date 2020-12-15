@@ -1,0 +1,39 @@
+import React, { Component } from 'react'
+
+class Sign_up extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            first_name:'',
+            last_name:'',
+            phone:'',
+            email:''
+        }
+    }
+    ChangeEventHandler=(event)=>{
+        var inputName=event.target.name;
+        var inputValue=event.target.value;
+        this.setState({[inputName]:inputValue})
+    }
+
+    render() {
+        return (
+             <div className="col-6 offset-3 mt-5">
+                 <p>First Name:{this.state.first_name}</p>
+                 <p>Last Name:{this.state.last_name}</p>
+                 <p>Phone No:{this.state.phone}</p>
+                 <p>Email:{this.state.email}</p>
+                   <form action="">
+                         <input onChange={this.ChangeEventHandler} type="text"  name="first_name" class="form-control form-control-sm"  id="" aria-describedby="helpId" placeholder="Enter your First Name"/>
+                         <input onChange={this.ChangeEventHandler} type="text" name="last_name" class="form-control form-control-sm"  id="" aria-describedby="helpId" placeholder="Enter your Last Name"/>
+                         <input onChange={this.ChangeEventHandler} type="tel" name="phone" class="form-control form-control-sm"  id="" aria-describedby="helpId" placeholder="Enter your Phone"/>
+                         <input onChange={this.ChangeEventHandler} type="email" name="email" class="form-control form-control-sm" id="" aria-describedby="helpId" placeholder="Enter Your Email"/>
+                         <input type="submit" id="" aria-describedby="helpId" value="Submit"/>
+                   </form>
+             </div>
+        )
+    }
+}
+
+export default Sign_up
