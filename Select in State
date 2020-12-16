@@ -1,37 +1,36 @@
-import React, { Component } from 'react';
-class ToWayDataBinding extends Component{
-    state={
-        age:"",
+import React, { Component } from 'react'
+
+class Select extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+              fruit1:"Mango",
+              fruit2:"Banana",
+              fruit3:"Orange",
+              fruit4:"Guava",
+              fruit:"",
+              auto:"Banana"
+        }
+    }
+    OnchangeHandler=(event)=>{
+        var SelectValue=event.target.value;
+        this.setState({fruit:SelectValue, auto:SelectValue})
     }
 
-
-
-    
-    formSubmit=(e)=>{
-        e.preventDefault();
-
-    };
- 
-    render(){
-        return(
-         <div className="app">
-
-
-             <form onSubmit={this.formSubmit}>
-             <level>Age</level><br/>
-             <select onChange={(e)=>{this.setState({age:e.target.value})}} name="age">
-                 <option value="" selected disabled>Select You Age</option>
-                 <option value="20-25">20-25</option>
-                 <option value="25-30">25-30</option>
-                 <option value="30-35">30-35</option>
-             </select>
-        <h6>My Age is {this.state.age}</h6><br/>
-             <button type="text">Submit</button>
-            </form>
-
-         </div>
+    render() {
+        return (
+            <div className="text-center">
+                <p>{this.state.fruit}</p>
+                <select onChange={this.OnchangeHandler} value={this.state.auto}>
+                    <option>{this.state.fruit1}</option>
+                    <option>{this.state.fruit2}</option>
+                    <option>{this.state.fruit3}</option>
+                    <option>{this.state.fruit4}</option>
+                </select>
+            </div>
         )
     }
 }
 
-export default ToWayDataBinding;
+export default Select
